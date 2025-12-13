@@ -46,6 +46,7 @@ get_header(); // Remove this line if you want a completely standalone page
     <p>DARK GREY</p>
     <p>DARK PURPLE</p>
     <p>DARK ORANGE</p>
+    <p>DARK GREEN</p>
 
     <div class="content-box">
         <h2>Welcome to Gaia Digital Agency</h2>

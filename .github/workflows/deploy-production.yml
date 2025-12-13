@@ -1,24 +1,24 @@
-name: Deploy to Staging
+name: Deploy to Production
 
 on:
   push:
     branches:
-      - staging
+      - main
 
 
 jobs:
-  staging-deploy:
-    name: 🚀 Deploy to Staging (staging.ptgvn.site)
+  production-deploy:
+    name: 🚀 Deploy to Production (ptgvn.site)
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get Latest Code
       uses: actions/checkout@v3
 
-    - name: 📂 Deploy via SSH
+    - name: 📂 Deploy to Production via SSH
       uses: easingthemes/ssh-deploy@main
       with:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
         REMOTE_HOST: ptgvn.site
         REMOTE_USER: ptgvnsit
-        TARGET: /home/ptgvnsit/staging.ptgvn.site/
+        TARGET: /home/ptgvnsit/ptgvn.site/
         EXCLUDE: ".git*, .github/, README.md, readme.md, .gitignore, GITHUB_SSH_KEY.txt"

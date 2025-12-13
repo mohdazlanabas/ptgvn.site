@@ -3,7 +3,7 @@ name: Publish Website
 on:
   push:
     branches:
-      - main
+      - staging
 
 
 jobs:
@@ -20,5 +20,5 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
         REMOTE_HOST: ptgvn.site
         REMOTE_USER: ptgvnsit
-        TARGET: /home/ptgvnsit/ptgvn.site/
+        TARGET: /home/ptgvnsit/staging.ptgvn.site/
         EXCLUDE: ".git*, .github/, README.md, readme.md, .gitignore, GITHUB_SSH_KEY.txt"

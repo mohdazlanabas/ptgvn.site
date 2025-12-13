@@ -43,7 +43,8 @@ get_header(); // Remove this line if you want a completely standalone page
     <h1>My Testing Page !!!</h1>
 
     <p>This is a standalone page you can edit locally!</p>
-
+    <p>TEST 01</p>
+    
     <div class="content-box">
         <h2>Welcome to Gaia Digital Agency</h2>
         <p>Add your custom content here. This file is located at:</p>

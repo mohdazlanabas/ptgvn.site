@@ -45,6 +45,7 @@ get_header(); // Remove this line if you want a completely standalone page
     <p>This is a standalone page you can edit locally!</p>
     <p>DARK GREY</p>
     <p>DARK PURPLE</p>
+    <p>DARK ORANGE</p>
 
     <div class="content-box">
         <h2>Welcome to Gaia Digital Agency</h2>

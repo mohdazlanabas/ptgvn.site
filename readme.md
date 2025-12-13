@@ -11,13 +11,21 @@ This is a WordPress installation for development and staging purposes. The site 
 ### Key Components
 
 - **WordPress Core**: Standard WordPress installation
-- **Themes**: Twenty Twenty-Three, Twenty Twenty-Four, Twenty Twenty-Five
+- **Active Theme**: Twenty Twenty-Five
+- **Other Themes**: Twenty Twenty-Three, Twenty Twenty-Four
 - **Key Plugins**:
   - Backuply Pro - Backup and restore functionality
   - SpeedyCache Pro - Performance and caching optimization
   - Loginizer - Login security and protection
   - CookieAdmin Pro - Cookie consent management
   - Akismet - Spam protection
+
+### Custom Development
+
+- **Testing Page** (`/testing-page.php`) - Standalone editable page for testing and custom content
+  - Accessible at: `your-site.com/testing-page.php`
+  - Edit locally without WordPress admin
+  - Changes appear immediately on refresh
 
 ## Development Environment Setup
 
@@ -76,9 +84,22 @@ This project includes Claude Code integration for AI-assisted development.
 
 Custom slash commands are located in `.claude/commands/`:
 
-- `/wp-status` - Check WordPress installation status, active theme, plugins, and configuration
-- `/find-hooks` - Search for WordPress hooks (actions and filters) in theme and plugins
-- `/theme-analyze` - Analyze the active WordPress theme structure and components
+#### WordPress Development
+- `/wp-status` - Comprehensive WordPress installation status check
+- `/theme-analyze` - Analyze Twenty Twenty-Five theme structure in detail
+- `/find-hooks` - Search for WordPress hooks (actions and filters)
+- `/check-plugins` - Analyze all installed plugins and identify conflicts
+
+#### Security & Performance
+- `/security-scan` - Perform security audit of WordPress installation
+- `/optimize-site` - Find performance optimization opportunities
+- `/deploy-check` - Pre-deployment checklist and safety checks
+
+#### Custom Development
+- `/edit-testing` - Quick access to edit the testing-page.php file
+
+#### Project Reference
+See `.claude/quick-reference.md` for complete command documentation
 
 ### Using Claude Code
 
@@ -93,11 +114,29 @@ Custom slash commands are located in `.claude/commands/`:
    ```
 
 3. **Common tasks with Claude Code**
-   - Analyze theme files: `/theme-analyze`
-   - Find specific hooks: `/find-hooks`
-   - Debug issues: Ask Claude to analyze error logs or specific files
+   - Check site status: `/wp-status`
+   - Analyze theme: `/theme-analyze`
+   - Find hooks: `/find-hooks`
+   - Security audit: `/security-scan`
+   - Optimize performance: `/optimize-site`
+   - Pre-deployment check: `/deploy-check`
+   - Edit testing page: `/edit-testing`
+   - Debug issues: Ask Claude to analyze error logs
    - Code generation: Request new features or modifications
    - Code review: Ask Claude to review your changes
+
+4. **Edit Custom Pages Locally**
+
+   The testing page can be edited without WordPress admin:
+   ```bash
+   # Open the file in your editor
+   open ptgvn.site/testing-page.php
+
+   # Or use Claude Code
+   /edit-testing
+   ```
+
+   Make changes, save, and refresh your browser to see updates immediately.
 
 ### Best Practices
 
@@ -113,13 +152,19 @@ This site is deployed via cPanel. Ensure all changes are committed to Git before
 
 ### Deployment Checklist
 
+Use `/deploy-check` slash command for automated pre-deployment verification, or follow this manual checklist:
+
+- [ ] Run `/deploy-check` to verify all changes
 - [ ] Test all changes locally
+- [ ] Run `/security-scan` to check for vulnerabilities
 - [ ] Verify database migrations (if any)
 - [ ] Check file permissions
+- [ ] Ensure wp-config.php is not in Git
 - [ ] Backup production database
+- [ ] Commit changes to Git
 - [ ] Deploy via cPanel Git integration
-- [ ] Clear cache after deployment
-- [ ] Verify site functionality
+- [ ] Clear cache with SpeedyCache Pro after deployment
+- [ ] Verify site functionality on production
 
 ## Support
 

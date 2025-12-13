@@ -1,8 +1,10 @@
-# Gaia Digital Agency WordPress Staging
+# PTGVN.site - WordPress Site
 
-Local WordPress staging and test site for Azlan Gaia Digital Agency (Bali) — https://gaiada.com/.
+WordPress website with automated deployment via GitHub Actions.
 
-This folder is versioned in Git and will be deployed via cPanel.
+- **Production**: https://ptgvn.site/
+- **Staging**: https://staging.ptgvn.site/
+- **Repository**: https://github.com/mohdazlanabas/ptgvn.site
 
 ## Project Overview
 
@@ -148,24 +150,81 @@ See `.claude/quick-reference.md` for complete command documentation
 
 ## Deployment
 
-This site is deployed via cPanel. Ensure all changes are committed to Git before deployment.
+This site uses **automated GitHub Actions deployments**:
+
+### Deployment Workflows
+
+1. **Staging Deployment** (`.github/workflows/deploy.yml`)
+   - **Branch**: `staging`
+   - **Target**: staging.ptgvn.site
+   - **Path**: `/home/ptgvnsit/staging.ptgvn.site/`
+   - **Trigger**: Push to `staging` branch
+
+2. **Production Deployment** (`.github/workflows/deploy-production.yml`)
+   - **Branch**: `main`
+   - **Target**: ptgvn.site
+   - **Path**: `/home/ptgvnsit/ptgvn.site/`
+   - **Trigger**: Push to `main` branch
+
+### Deployment Workflow
+
+```bash
+# 1. Make changes locally and test
+# 2. Commit changes
+git add .
+git commit -m "Your commit message"
+
+# 3. Deploy to staging first
+git push origin staging
+
+# 4. Verify on https://staging.ptgvn.site/
+
+# 5. Merge to main for production deployment
+git checkout main
+git merge staging
+git push origin main
+
+# 6. Monitor deployment in GitHub Actions tab
+```
 
 ### Deployment Checklist
 
 Use `/deploy-check` slash command for automated pre-deployment verification, or follow this manual checklist:
 
-- [ ] Run `/deploy-check` to verify all changes
 - [ ] Test all changes locally
 - [ ] Run `/security-scan` to check for vulnerabilities
 - [ ] Verify database migrations (if any)
-- [ ] Check file permissions
 - [ ] Ensure wp-config.php is not in Git
 - [ ] Backup production database
 - [ ] Commit changes to Git
-- [ ] Deploy via cPanel Git integration
+- [ ] Push to `staging` branch first
+- [ ] Verify on staging.ptgvn.site
+- [ ] Merge to `main` and push
+- [ ] Monitor GitHub Actions for successful deployment
 - [ ] Clear cache with SpeedyCache Pro after deployment
 - [ ] Verify site functionality on production
 
+### SSH Setup
+
+The deployment uses SSH key authentication:
+- **GitHub Secret**: `SSH_KEY` (contains private key)
+- **Local Keys**: `~/.ssh/ptgvn_github` and `~/.ssh/ptgvn_github.pub`
+- **Server**: Public key added to `/home/ptgvnsit/.ssh/authorized_keys`
+
+## Git Branches
+
+- **main** - Production branch (auto-deploys to ptgvn.site)
+- **staging** - Staging branch (auto-deploys to staging.ptgvn.site)
+- **branch-a, branch-b, branch-c** - Feature development branches
+
+## Monitoring Deployments
+
+Check deployment status:
+1. Go to GitHub repository
+2. Click **Actions** tab
+3. View running/completed workflows
+4. Check logs for any errors
+
 ## Support
 
-For issues or questions about the Gaia Digital Agency site, contact the development team or visit https://gaiada.com/.
+For issues or questions, check the GitHub repository issues page.

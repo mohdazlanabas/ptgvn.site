@@ -1,0 +1,17 @@
+COPY THIS ENTIRE CONTENT TO GITHUB SECRETS AS 'SSH_KEY'
+================================================================
+
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+QyNTUxOQAAACB+QgnTFVQFfafU/t4QPF4rt4D5a/KNK/eXwKVGneASDQAAAJgquNueKrjb
+ngAAAAtzc2gtZWQyNTUxOQAAACB+QgnTFVQFfafU/t4QPF4rt4D5a/KNK/eXwKVGneASDQ
+AAAEC+QLbr3JXYCLNZBCrM2ldBNlUeBWAk9T8hG15gkTXCRX5CCdMVVAV9p9T+3hA8Xiu3
+gPlr8o0r95fApUad4BINAAAAFGdpdGh1Yi1hY3Rpb25zLXB0Z3ZuAQ==
+-----END OPENSSH PRIVATE KEY-----
+
+================================================================
+IMPORTANT:
+1. Copy ONLY the key (from -----BEGIN to -----END, including those lines)
+2. Do NOT add any extra spaces, newlines, or characters
+3. Make sure there are NO trailing spaces at the end of lines
+================================================================

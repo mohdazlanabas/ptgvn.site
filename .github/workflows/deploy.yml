@@ -19,7 +19,7 @@ jobs:
       with:
         target-server: ptgvn.site
         remote-user: ptgvnsit
-        private-ssh-key: ${{ secrets.SSH_KEY }}
+        private-ssh-key: ${{secrets.SSH_KEY}}
         destination-path: /home/ptgvnsit/ptgvn.site/
         ssh-port: 22
         rsync-options: --archive --verbose --compress --human-readable --delete

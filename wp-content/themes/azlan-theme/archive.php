@@ -6,12 +6,11 @@
     while(have_posts()) {
         the_post(); ?>
         
-        <div>
-            <h3>
-                <a href="<?php the_permalink() ?>">
-                <?php the_title(); ?>
+        <div class="content-block">
+            <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+            <div>
                 <?php the_content(); ?>
-            </h3>
+            </div>
         </div>
     <?php 
     }

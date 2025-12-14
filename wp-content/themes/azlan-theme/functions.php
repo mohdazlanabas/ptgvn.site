@@ -9,12 +9,23 @@ function unicorn() {
 add_action('after_setup_theme', 'unicorn');
 
 function myfiles() {
-    wp_enqueue_style('mytheme-style', get_stylesheet_uri());
-    wp_enqueue_script('main.js',
-    get_template_directory_uri() . '/main.js',
-    NULL,
-    '1.0.0', 
-    true);
+    // Cache-bust assets during development by using file modification time.
+    $theme_directory = get_template_directory();
+
+    wp_enqueue_style(
+        'azlan-style',
+        get_stylesheet_uri(),
+        [],
+        filemtime( $theme_directory . '/style.css' )
+    );
+
+    wp_enqueue_script(
+        'azlan-main',
+        get_template_directory_uri() . '/main.js',
+        [],
+        filemtime( $theme_directory . '/main.js' ),
+        true
+    );
 }
 
 add_action('wp_enqueue_scripts', 'myfiles');

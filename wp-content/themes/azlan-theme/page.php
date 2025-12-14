@@ -3,14 +3,12 @@
     while(have_posts()) {
         the_post(); ?>
         
-        <div>
+        <div class="content-block">
             <p>This is A Page Template</p>
-            <h2>
-                <?php the_title(); ?>
-                <div>
-                    <?php the_content(); ?>
-                </div>
-            </h2>
+            <h2><?php the_title(); ?></h2>
+            <div>
+                <?php the_content(); ?>
+            </div>
         </div>
     <?php 
     }

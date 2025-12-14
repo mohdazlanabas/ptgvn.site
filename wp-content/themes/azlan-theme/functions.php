@@ -11,8 +11,8 @@ add_action('after_setup_theme', 'unicorn');
 function myfiles() {
     wp_enqueue_style('mytheme-style', get_stylesheet_uri());
     wp_enqueue_script('main.js',
-    get_template_directory_uri() . '/js/main.js',
-    array('jquery'),
+    get_template_directory_uri() . '/main.js',
+    NULL,
     '1.0.0', 
     true);
 }

@@ -1,9 +1,9 @@
-<h1>Welcome to Azlan Theme</h1>
+<?php get_header(); ?>
 
 <?php
     while(have_posts()) {
         the_post(); ?>
-        
+
         <div>
             <h2>
                 <a href="<?php the_permalink() ?>">

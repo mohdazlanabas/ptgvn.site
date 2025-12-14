@@ -1,4 +1,4 @@
-<h1>Welcome to Azlan Theme</h1>
+<?php get_header(); ?>
 
 <h2><?php the_archive_title(); ?></h2>
 

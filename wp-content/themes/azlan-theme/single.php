@@ -6,9 +6,10 @@
         
         <div>
             <h2>
-                <a href="<?php the_permalink() ?>">
                 <?php the_title(); ?>
-                <?php the_content(); ?>
+                <div>
+                    <?php the_content(); ?>
+                </div>
             </h2>
         </div>
     <?php 

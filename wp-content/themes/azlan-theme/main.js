@@ -1,8 +1,8 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Simple visual cue to confirm the script is loaded.
-    document.body.classList.add('azlan-ready');
-    console.log('Azlan theme scripts loaded');
+document.addEventListener( 'DOMContentLoaded', function () {
+	// Simple visual cue to confirm the script is loaded.
+	document.body.classList.add( 'azlan-ready' );
+	console.log( 'Azlan theme scripts loaded' );
 
-    // Show a friendly popup each time the page loads.
-    alert('Hello From JS');
-});
+	// Show a friendly popup each time the page loads.
+	alert( 'Hello From JS' );
+} );

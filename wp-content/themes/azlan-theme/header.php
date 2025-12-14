@@ -1,1 +1,1 @@
-<h1>Welcome to Azlan Theme</h1>
+<h1>Called From Header File</h1>

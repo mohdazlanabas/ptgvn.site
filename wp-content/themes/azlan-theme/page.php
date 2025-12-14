@@ -15,4 +15,5 @@
     <?php 
     }
 ?>
-<p> Foother</p>
+
+<?php get_footer(); ?>
